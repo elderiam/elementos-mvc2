@@ -11,6 +11,21 @@ public class Mensaje {
     private String  cuerpo;
     private LocalDate fecha;
 
+    @Override
+    public String toString() {
+        return "Mensaje{" +
+                "id='" + id + '\'' +
+                ", cuerpo='" + cuerpo + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
+
+    public Mensaje(String id, String cuerpo, LocalDate fecha) { //Este es para hacer un UPDATE
+        this.id = id;
+        this.cuerpo = cuerpo;
+        this.fecha = fecha;
+    }
+
     public Mensaje(String cuerpo, LocalDate fecha) {
         this.cuerpo = cuerpo;
         this.fecha = fecha;

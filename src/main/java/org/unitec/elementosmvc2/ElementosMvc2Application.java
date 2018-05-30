@@ -16,7 +16,31 @@ public class ElementosMvc2Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		/*
+
 		LocalDate fecha=LocalDate.now();
-		repoMensaje.save(new Mensaje("Mi primer MENSAJE",fecha));
+
+		//repoMensaje.save(new Mensaje("Hola","cerdito",fecha));
+
+		//Buscar todos los mensajes
+		for(Mensaje mensa:  repoMensaje.findAll()){
+			System.out.println(mensa);
+		}
+
+
+		//Buscar por ID
+
+		//System.out.println(repoMensaje.findById("5b0dfe066b029d127809cc2c").get());
+
+		//Buscar por el cuerpo del mensaje
+
+		//System.out.println(repoMensaje.findByCuerpo("cerdito"));
+
+		//Eliminar un mensaje
+		Mensaje mens=new Mensaje();
+		mens.setId("Hola");
+		repoMensaje.delete(mens);
+
+*/
 	}
 }

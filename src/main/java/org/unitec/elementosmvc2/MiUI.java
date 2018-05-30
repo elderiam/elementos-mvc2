@@ -1,11 +1,8 @@
-package unitec.elementosmvc;
+package org.unitec.elementosmvc2;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 
 /**
@@ -19,13 +16,16 @@ public class MiUI extends UI{
     protected void init(VaadinRequest request) {
 
         VerticalLayout layout = new VerticalLayout();
-        Label etiqueta = new Label("Bienvenido a Mi Aplicacion");
+        Label etiqueta = new Label("Bienvenido a mi aplicacion de Java 3");
         etiqueta.addStyleName(ValoTheme.LABEL_H2);
 
-        Button boton = new Button("Ingresar!!");
+        TextField texto = new TextField();
+        texto.setPlaceholder("Cuerpo del Mensaje");
+        Button boton = new Button("Guardar Mensaje");
         boton.addStyleName(ValoTheme.BUTTON_DANGER);
         //Agregamos la etiqueta y el boton a el layout
         layout.addComponent(etiqueta);
+        layout.addComponent(texto);
         layout.addComponent(boton);
 
         //Finalmente agregamos el layout al contenedor principal de init
