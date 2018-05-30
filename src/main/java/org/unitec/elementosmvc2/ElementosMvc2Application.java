@@ -17,6 +17,6 @@ public class ElementosMvc2Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		LocalDate fecha=LocalDate.now();
-		repoMensaje.save(new Mensaje(fecha,"Mi primer MENSAJE"));
+		repoMensaje.save(new Mensaje("Mi primer MENSAJE",fecha));
 	}
 }

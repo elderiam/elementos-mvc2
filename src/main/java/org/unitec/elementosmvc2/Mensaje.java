@@ -7,10 +7,14 @@ import java.time.LocalDate;
 public class Mensaje {
 
     @Id
-    private id;
-    private cuerpo;
+    private String id;
+    private String  cuerpo;
     private LocalDate fecha;
 
+    public Mensaje(String cuerpo, LocalDate fecha) {
+        this.cuerpo = cuerpo;
+        this.fecha = fecha;
+    }
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
