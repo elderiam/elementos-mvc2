@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @SpringBootApplication
 public class ElementosMvc2Application implements CommandLineRunner {
 
-	@Autowired RepositorioMensaje repoMensaje;
+	@Autowired RepositorioMensaje repoMensaje; //inyeccion de dependencias
 	public static void main(String[] args) {
 		SpringApplication.run(ElementosMvc2Application.class, args);
 	}
