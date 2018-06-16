@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 
+
+//Es una clase entidad
 public class Mensaje {
 
     @Id
