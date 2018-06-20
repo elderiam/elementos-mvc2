@@ -14,7 +14,7 @@ public class Mensaje {
     private LocalDate fecha;
 
     @Override
-    public String toString() {
+    public String toString() { //Guarda una cadena el toString
         return "Mensaje{" +
                 "id='" + id + '\'' +
                 ", cuerpo='" + cuerpo + '\'' +

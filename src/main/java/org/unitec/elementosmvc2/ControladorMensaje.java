@@ -1,5 +1,6 @@
 package org.unitec.elementosmvc2;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class ControladorMensaje {
 
     @Autowired RepositorioMensaje repomensa;
-    //Caso a) Buscar todos
+    //CASO a) ---> Buscar todos
 
     @GetMapping("/mensaje")
     public List<Mensaje> buscarTodos(){
@@ -20,7 +21,7 @@ public class ControladorMensaje {
       return repomensa.findAll();
     }
 
-    //CASO b) Buscar por id
+    //CASO b) ---> Buscar por id
 
     @GetMapping("/mensaje/{id}")
     public Mensaje buscarPorId(@PathVariable String id){
@@ -28,4 +29,24 @@ public class ControladorMensaje {
        return repomensa.findById(id).get();
 
     }
+
+    //CASO c) ---> Guardar
+
+    @PostMapping("/mensaje")
+    public Estatus guardar(@RequestBody String json) throws Exception {
+
+        //Primero convertimos este string json a un objeto java
+        ObjectMapper mapper = new ObjectMapper(); //Clase para convertir el objeto java y solo esta en Spring
+       Mensaje mensa = mapper.readValue(json, Mensaje.class);
+       repomensa.save(mensa); //este es el que guarda
+        System.out.println("Este objeto se convirtio: "+mensa);
+        Estatus estatus = new Estatus();
+        estatus.setSucess(true);
+        estatus.setMensaje("Mensaje guardado con exito!!!");
+        return estatus;
+    }
+
+
+
+
 }
