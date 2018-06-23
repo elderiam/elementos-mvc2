@@ -46,6 +46,35 @@ public class ControladorMensaje {
         return estatus;
     }
 
+    //Caso d) ---> Actualizar
+
+    @PutMapping("/mensaje")
+    public Estatus actualizar (@RequestBody String json) throws Exception {
+
+        //Primero convertimos este string json a un objeto java
+        ObjectMapper mapper = new ObjectMapper(); //Clase para convertir el objeto java y solo esta en Spring
+        Mensaje mensa = mapper.readValue(json, Mensaje.class);
+        repomensa.save(mensa); //este es el que guarda
+        System.out.println("Este objeto se convirtio: "+mensa);
+        Estatus estatus = new Estatus();
+        estatus.setSucess(true);
+        estatus.setMensaje("Mensaje guardado con exito!!!");
+        return estatus;
+    }
+
+    //Caso e) Borrar
+    @DeleteMapping("/mensaje/{id}")
+    public Estatus boorrarPorId(@PathVariable String id){
+        Mensaje mensa = new Mensaje();
+
+        repomensa.deleteById(id);
+        Estatus e=new Estatus();
+        e.setSucess(true);
+        e.setMensaje("Mensaje borrado con exito!!");
+        return  e;
+
+    }
+
 
 
 
