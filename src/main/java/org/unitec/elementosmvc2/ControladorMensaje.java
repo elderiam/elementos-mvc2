@@ -21,7 +21,7 @@ public class ControladorMensaje {
       return repomensa.findAll();
     }
 
-    //CASO b) ---> Buscar por id
+    //Caso b) ---> Buscar por id
 
     @GetMapping("/mensaje/{id}")
     public Mensaje buscarPorId(@PathVariable String id){
@@ -30,7 +30,7 @@ public class ControladorMensaje {
 
     }
 
-    //CASO c) ---> Guardar
+    //Caso c) ---> Guardar
 
     @PostMapping("/mensaje")
     public Estatus guardar(@RequestBody String json) throws Exception {
@@ -62,6 +62,7 @@ public class ControladorMensaje {
         return estatus;
     }
 
+
     //Caso e) Borrar
     @DeleteMapping("/mensaje/{id}")
     public Estatus boorrarPorId(@PathVariable String id){
@@ -72,7 +73,6 @@ public class ControladorMensaje {
         e.setSucess(true);
         e.setMensaje("Mensaje borrado con exito!!");
         return  e;
-
     }
 
 
